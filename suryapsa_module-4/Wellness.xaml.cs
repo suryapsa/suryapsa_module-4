@@ -11,7 +11,7 @@ public partial class Wellness : ContentPage
 		InitializeComponent();
         SleepHoursSlider.Value = 7.0;
         StressLevelSlider.Value = 4.0;
-        ActivityMinutesSlider.Value = 30.0;
+        ActivityMinSlider.Value = 30.0;
         UpdateGenderSelection(_selectedGender);
     }
     private void SliderValue_Changed(object sender, ValueChangedEventArgs e)
@@ -25,9 +25,9 @@ public partial class Wellness : ContentPage
         {
             StressLevelLabel.Text = $"{e.NewValue:F1}";
         }
-        else if (slider == ActivityMinutesSlider)
+        else if (slider == ActivityMinSlider)
         {
-            ActivityMinutesLabel.Text = $"{e.NewValue:F1} min";
+            ActivityMinLabel.Text = $"{e.NewValue:F1} min";
         }
     }
 
@@ -62,11 +62,11 @@ public partial class Wellness : ContentPage
  
     private void CalculateButton_Clicked(object sender, EventArgs e)
     {
-        double sleepHours = SleepHoursSlider.Value;
-        double stressLevel = StressLevelSlider.Value;
-        double activityMinutes = ActivityMinutesSlider.Value;
+        double sleephrs = SleepHoursSlider.Value;
+        double stresslevel = StressLevelSlider.Value;
+        double activitymin = ActivityMinSlider.Value;
 
-        double rawScore = (sleepHours * 8) - (stressLevel * 5) + (activityMinutes * 0.5);
+        double rawScore = (sleephrs * 8) - (stresslevel * 5) + (activitymin * 0.5);
 
         _wellnessScore = Math.Max(0, Math.Min(100, rawScore));
 

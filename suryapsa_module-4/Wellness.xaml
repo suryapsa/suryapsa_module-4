@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="suryapsa_module_4.Wellness"
-             Title="Wellness">
+             Title="Wellness" BackgroundColor="White">
     <Grid RowDefinitions="Auto, 10, Auto, 10, Auto, 10, Auto, 10, Auto, 10, Auto, *" 
        Padding="20"
        RowSpacing="10"
@@ -84,8 +84,8 @@
         <!-- Activity Minutes Slider -->
         <StackLayout Grid.Row="8" Spacing="5">
             <Label Text="Activity Minutes" FontAttributes="Bold" FontSize="18" TextColor="#2c3e50"/>
-            <Label x:Name="ActivityMinutesLabel" Text="30.0 min" FontSize="16" HorizontalOptions="End" TextColor="#34495e"/>
-            <Slider x:Name="ActivityMinutesSlider" 
+            <Label x:Name="ActivityMinLabel" Text="30.0 min" FontSize="16" HorizontalOptions="End" TextColor="#34495e"/>
+            <Slider x:Name="ActivityMinSlider" 
                  Minimum="0" Maximum="120" Value="30" 
                  MaximumTrackColor="#bdc3c7" MinimumTrackColor="#3498db" 
                  ThumbColor="#2980b9" ValueChanged="SliderValue_Changed"/>
