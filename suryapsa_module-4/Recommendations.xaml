@@ -9,7 +9,7 @@
         <Label Grid.Row="1" Text="is"   VerticalOptions="Center" 
   HorizontalOptions="Center"  FontSize="30"></Label>
         <Label  Grid.Row="2" x:Name="Recommendationlabel"
-               FontSize="30"
+               FontSize="20"
             
             VerticalOptions="Center" 
             HorizontalOptions="Center" />

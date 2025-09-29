@@ -8,7 +8,7 @@
 HorizontalOptions="Center" ></Label>
         <Label  Grid.Row="1"  x:Name="WellnessScore" FontSize="Medium" HorizontalOptions="Center"></Label>
         <Label  Grid.Row="2"  x:Name="Status" FontSize="Medium" HorizontalOptions="Center"></Label>
-        <StackLayout Grid.Row="3" Spacing="20" Orientation="Horizontal" VerticalOptions="CenterAndExpand" HorizontalOptions="Center">
+        <StackLayout Grid.Row="3" Spacing="10" Orientation="Vertical" VerticalOptions="CenterAndExpand" HorizontalOptions="Center">
         <Button 
  HorizontalOptions="Center"
  BackgroundColor="#2980b9"
