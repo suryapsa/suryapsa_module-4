@@ -2,11 +2,13 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="suryapsa_module_4.Wellness"
-             Title="Wellness" BackgroundColor="White">
+             Title="Wellness" BackgroundColor="White" NavigationPage.HasBackButton="False">
+    <ScrollView>
     <Grid RowDefinitions="Auto, 10, Auto, 10, Auto, 10, Auto, 10, Auto, 10, Auto, *" 
        Padding="20"
        RowSpacing="10"
        VerticalOptions="CenterAndExpand">
+      
         <Label Text="Daily Wellness Score" 
             Grid.Row="0"
             FontAttributes="Bold"
@@ -90,9 +92,18 @@
                  MaximumTrackColor="#bdc3c7" MinimumTrackColor="#3498db" 
                  ThumbColor="#2980b9" ValueChanged="SliderValue_Changed"/>
         </StackLayout>
+            <Button x:Name="Nextpagedetailsbutton" 
+     Text="NextPage"
+     Grid.Row="10"
+     HorizontalOptions="Center"
+     BackgroundColor="#2980b9"
+     TextColor="White"
+     FontSize="20"
+     CornerRadius="10"
+     Clicked="NextpagebuttonClicked" />
 
-        <!-- Calculate Button -->
-        <Button x:Name="CalculateButton" 
+            <!-- Calculate Button -->
+        <!--<Button x:Name="CalculateButton" 
              Text="Calculate Wellness Score"
              Grid.Row="10"
              HorizontalOptions="Center"
@@ -100,7 +111,8 @@
              TextColor="White"
              FontSize="20"
              CornerRadius="10"
-             Clicked="CalculateButton_Clicked" />
+             Clicked="CalculateButton_Clicked" />-->
 
     </Grid>
+    </ScrollView>
 </ContentPage>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="suryapsa_module_4.WellnessResult"
+             NavigationPage.HasBackButton="False">
+    <Grid Grid.Row="3"  RowDefinitions="Auto, Auto, Auto, *">
+        <Label Grid.Row="0" Text="WellnessScore" FontSize="Large" VerticalOptions="Center" 
+HorizontalOptions="Center" ></Label>
+        <Label  Grid.Row="1"  x:Name="WellnessScore" FontSize="Medium" HorizontalOptions="Center"></Label>
+        <Label  Grid.Row="2"  x:Name="Status" FontSize="Medium" HorizontalOptions="Center"></Label>
+        <StackLayout Grid.Row="3" Spacing="20" Orientation="Horizontal" VerticalOptions="CenterAndExpand" HorizontalOptions="Center">
+        <Button 
+ HorizontalOptions="Center"
+ BackgroundColor="#2980b9"
+ TextColor="White"
+ FontSize="20"
+ CornerRadius="10" Text="Recommendation" Clicked="RecommendationBtnClicked"></Button>
+        <Button 
+ HorizontalOptions="Center"
+ BackgroundColor="#2980b9"
+ TextColor="White"
+ FontSize="20"
+ CornerRadius="10" Text="Back to Home" Clicked="BacktohomeClicked"></Button>
+        </StackLayout>
+    </Grid>
+</ContentPage>

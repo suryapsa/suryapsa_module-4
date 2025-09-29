@@ -58,10 +58,10 @@ public partial class Wellness : ContentPage
             FemaleBorder.Stroke = Colors.LightPink;
         }
     }
+    
+        private void NextpagebuttonClicked(object sender, EventArgs e)
 
- 
-    private void CalculateButton_Clicked(object sender, EventArgs e)
-    {
+        {
         double sleephrs = SleepHoursSlider.Value;
         double stresslevel = StressLevelSlider.Value;
         double activitymin = ActivityMinSlider.Value;
@@ -70,16 +70,39 @@ public partial class Wellness : ContentPage
 
         _wellnessScore = Math.Max(0, Math.Min(100, rawScore));
 
-       
+
         int finalScore = (int)Math.Round(_wellnessScore);
 
         string status = GetStatus(finalScore);
         string recommendations = GetRecommendation(finalScore, _selectedGender);
 
-   
+
         string genderIcon = _selectedGender == "Male" ? "♂️" : "♀️";
-        DisplayAlert($"Your Wellness Score: {finalScore}", $"Status: {status}\n\nRecommendations: {recommendations}\n\nSelected Gender: {_selectedGender} {genderIcon}", "OK");
-    }
+
+        Navigation.PushAsync(new WellnessResult(_selectedGender, finalScore));
+         }
+
+
+    //private void CalculateButton_Clicked(object sender, EventArgs e)
+    //{
+    //    double sleephrs = SleepHoursSlider.Value;
+    //    double stresslevel = StressLevelSlider.Value;
+    //    double activitymin = ActivityMinSlider.Value;
+
+    //    double rawScore = (sleephrs * 8) - (stresslevel * 5) + (activitymin * 0.5);
+
+    //    _wellnessScore = Math.Max(0, Math.Min(100, rawScore));
+
+       
+    //    int finalScore = (int)Math.Round(_wellnessScore);
+
+    //    string status = GetStatus(finalScore);
+    //    string recommendations = GetRecommendation(finalScore, _selectedGender);
+
+   
+    //    string genderIcon = _selectedGender == "Male" ? "♂️" : "♀️";
+    //    DisplayAlert($"Your Wellness Score: {finalScore}", $"Status: {status}\n\nRecommendations: {recommendations}\n\nSelected Gender: {_selectedGender} {genderIcon}", "OK");
+    //}
 
 
     private string GetStatus(int score)

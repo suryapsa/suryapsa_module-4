@@ -5,9 +5,13 @@
         public App()
         {
             InitializeComponent();
-            MainPage = new Wellness();
+            
+        }
+        protected override Window CreateWindow(IActivationState? activationState)
+        {
+            return new Window(new NavigationPage(new Wellness()));
         }
 
-    
+
     }
 }
